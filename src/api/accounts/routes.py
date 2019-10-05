@@ -23,6 +23,7 @@ def authenticate():
     )
 
     if user:
-        return respond(user, 200)
+        session_id = services.generate_session_token(user[0]["id"])
+        return respond({ **user[0], "session_id": session_id }, 200)
     else:
         return error("Invalid credentials", 403)

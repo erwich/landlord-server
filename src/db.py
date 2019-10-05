@@ -18,6 +18,8 @@ def execute_query(sql, database, params, use_dict=True):
         sql,
         params
     )
-    print(sql)
-    print(params)
-    return cursor.fetchall()
+    
+    if use_dict:
+        return cursor.fetchall()
+    else:
+        database.commit()

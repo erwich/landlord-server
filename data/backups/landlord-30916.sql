@@ -337,30 +337,6 @@ LOCK TABLES `user_properties` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `user_sessions`
---
-
-DROP TABLE IF EXISTS `user_sessions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_sessions` (
-  `id` varchar(500) DEFAULT NULL,
-  `user_id` int(11) NOT NULL,
-  `login_time` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_sessions`
---
-
-LOCK TABLES `user_sessions` WRITE;
-/*!40000 ALTER TABLE `user_sessions` DISABLE KEYS */;
-INSERT INTO `user_sessions` VALUES ('b07f05a3-60dd-42a6-8db7-d8e88556a52c',1,'2019-10-05 23:04:00');
-/*!40000 ALTER TABLE `user_sessions` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `user_types`
 --
 
@@ -409,7 +385,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'eric@wich.tech','5f4dcc3b5aa765d61d8327deb882cf99','Eric','Wich',1);
+INSERT INTO `users` VALUES (1,'eric@wich.tech','4941f5de0d5372130aa4a4ad73b320b3','Eric','Wich',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -444,4 +420,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-05 23:04:33
+-- Dump completed on 2019-10-05 19:50:43
