@@ -4,6 +4,7 @@ import flask
 
 # Import all api modules and their routes
 from api.accounts import accounts 
+from api.issues import issues 
 
 #Initialize Flask
 app = flask.Flask(config['web_server']['flask_app_name'])
@@ -22,7 +23,8 @@ def init_routes(app, blueprints):
 
 init_routes(
     app, [
-        ("accounts", accounts)
+        ("accounts", accounts),
+        ("issues", issues)
     ]
 )
 
