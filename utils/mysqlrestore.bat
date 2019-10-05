@@ -1,0 +1,1 @@
+type ..\data\landlord.sql | docker exec -i landlord_data /usr/bin/mysql -u landlord --password=hackupstate landlord
