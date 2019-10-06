@@ -1,3 +1,1 @@
-from api.issues.routes import (
-    issues
-)
+from api.issues.routes import issues

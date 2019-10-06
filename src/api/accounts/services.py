@@ -1,14 +1,10 @@
-from db import (
-    landlord,
-    execute_query
-)
+from db import landlord, execute_query
 import hashlib
 import uuid
 
+
 def authenticate(email, password):
-    password = hashlib.md5(
-        bytes(password, 'utf-8')
-    ).hexdigest()
+    password = hashlib.md5(bytes(password, "utf-8")).hexdigest()
     user = execute_query(
         """
             SELECT 
@@ -24,10 +20,11 @@ def authenticate(email, password):
         """,
         landlord,
         (email, password),
-        True
+        True,
     )
-    
+
     return False if len(user) == 0 else user
+
 
 def purge_user_session(userid):
     execute_query(
@@ -37,8 +34,9 @@ def purge_user_session(userid):
         """,
         landlord,
         (userid,),
-        False
+        False,
     )
+
 
 def generate_session_token(userid):
     # First, purge existing sessions (one session per user for security)
@@ -58,6 +56,6 @@ def generate_session_token(userid):
         """,
         landlord,
         (session_id, userid),
-        False
+        False,
     )
     return session_id

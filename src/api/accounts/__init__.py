@@ -1,3 +1,1 @@
-from api.accounts.routes import (
-    accounts
-)
+from api.accounts.routes import accounts

@@ -1,7 +1,5 @@
-from db import (
-    landlord,
-    execute_query
-)
+from db import landlord, execute_query
+
 
 def create_issue(form_data):
     try:
@@ -34,7 +32,7 @@ def create_issue(form_data):
                 form_data["issue_type"],
                 form_data["priority"],
             ),
-            False
+            False,
         )
         return True
     except Exception as e:

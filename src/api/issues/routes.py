@@ -1,16 +1,10 @@
 import json
-from flask import (
-    current_app as app,
-    Blueprint,
-    request
-)
+from flask import current_app as app, Blueprint, request
 from requests import respond, error
 import api.issues.services as services
 
-issues = Blueprint(
-    'issues',
-    __name__
-)
+issues = Blueprint("issues", __name__)
+
 
 @issues.route("/", methods=["GET", "PUT", "POST", "DELETE"])
 def issue():
